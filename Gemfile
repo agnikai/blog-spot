@@ -4,6 +4,6 @@ source 'http://rubygems.org'
 
 gem "middleman", "~> 3.1.5"
 gem "middleman-blog", "~> 3.3.0"
-
+gem "middleman-deploy"
 # For feed.xml.builder
 gem "builder", "~> 3.0"

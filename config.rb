@@ -2,7 +2,7 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = "EST"
 
 activate :blog do |blog|
   # blog.prefix = "blog"
@@ -92,9 +92,12 @@ configure :build do
   
   # Enable cache buster
   # activate :cache_buster
+
+  # Enable pretty urls
+  activate :directory_indexes
   
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
   
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -104,3 +107,15 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+
+
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  deploy.remote = "origin" # remote name or git url, default: origin
+  deploy.branch = "gh-pages" # default: gh-pages
+  deploy.build_before = true # default: false
+end
+
